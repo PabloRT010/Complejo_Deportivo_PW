@@ -1,7 +1,7 @@
-<x-guest-layout>
+@extends('layouts.header')
+@section('contenido')
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -14,6 +14,9 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+ 
+
+            @method('PUT')
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
@@ -33,16 +36,17 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+              
 
                 <x-button class="ml-4">
                     {{ __('Log in') }}
                 </x-button>
+                <br>
+                <h4>¿No tienes cuenta?</h4><a href=" {{route('registro')}}" class:"btn btn-primary">Registrate</a>
             </div>
         </form>
+        <br>
+        <h4><a href=" {{route('inicio')}}" title="Inicio">Volver</a></h4>
     </x-authentication-card>
-</x-guest-layout>
+
+@endsection

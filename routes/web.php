@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\Inicio_Controller@index')->name('inicio');
-Route::get('/acceso','App\Http\Controllers\Inicio_Controller@acceso')->name('inicio_sesion');
+Route::get('/acceso','App\Http\Controllers\Inicio_Controller@acceso')->name('login');
 Route::get('/registro','App\Http\Controllers\Inicio_Controller@registro')->name('registro');
-
+Route::get('/cliente','App\Http\Controllers\Inicio_Controller@cliente')->name('cliente');
+Route::get('/mantenedor','App\Http\Controllers\Inicio_Controller@mantenedor')->name('mantenedor');
 
 
 Route::middleware([

@@ -11,10 +11,18 @@ class Inicio_Controller extends Controller
     }
 
     public function acceso(){
-        return view('inicio.acceso');
+        return view('auth.login');
     }
 
     public function registro(){
-        return view('inicio.registro');
+        return view('auth.register');
+    }
+
+    public function cliente(){
+        return view ('inicio.cliente');
+    }
+
+    public function mantenedor(){
+        return view ('inicio.mantenedor');
     }
 }
